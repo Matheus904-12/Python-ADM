@@ -150,19 +150,19 @@ def listar_produtos_operador():  # Função para operador listar seus produtos
             print(f"[Código: {codigo}, Descrição: {info[0]}, Preço: {info[1]}]")
 
 def salvar_arquivo():  # Salva produtos no arquivo
-    with open("exe3/cadastro_produtos.txt", "w") as arquivo:
+    with open("Cadastros/cadastro_produtos.txt", "w") as arquivo:
         for codigo, info in produtos.items():
             arquivo.write(f"codigo:{codigo} desc:{info[0]} preco:{info[1]}\n")
 
 def salvar_arquivo_operador():  # Salva produtos do operador no arquivo
-    with open("exe3/cadastro_operador.txt", "w") as arquivo:
+    with open("Cadastros/cadastro_operador.txt", "w") as arquivo:
         for codigo, info in operador_produtos.items():
             arquivo.write(f"codigo:{codigo} desc:{info[0]} preco:{info[1]}\n")
 
 def carregar_arquivos():  # Carrega produtos dos arquivos ao iniciar
     global produto_id
     try:
-        with open("exe3/cadastro_produtos.txt", "r") as arquivo:
+        with open("Cadastros/cadastro_produtos.txt", "r") as arquivo:
             for linha in arquivo:
                 try:
                     parts = linha.strip().split()
